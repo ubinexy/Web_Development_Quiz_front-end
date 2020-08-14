@@ -4,7 +4,7 @@ Task1:
 
 1. HTML+CSS
 	1.1. Header 
-		a. 导航 “商城”高亮 (23,145,225)
+		a. 导航栏高亮 (23,145,225)
 		b. 背景色彩（0,21,41)
 	1.2. 商品卡片
 		a. 边框	solid , (222,222,222)
@@ -24,7 +24,7 @@ Controller 返回
 		name: “可乐1”
 		price: “1元”
 		unit: ”瓶“
-		image_url:  
+		image_url: “./asserts/product_image_placeholder.png”
 	},
 	{
 		id:
