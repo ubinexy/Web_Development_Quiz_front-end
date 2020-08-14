@@ -5,20 +5,16 @@ import Products from './Products';
 
 class App extends Component {
   state = {
-    products: [{ id: 1, name: '可乐1', price: '1元', unit: '瓶' }],
+    products: undefined,
+    // products: [{ id: 1, name: '可乐1', price: '1元', unit: '瓶' }],
   };
 
   componentDidMount() {
-    // this.getData();
-    // this.setState({
-    //   products: ,
-    // });
-
-    console.log('~~~~~~~~~~~~~~~~~~', this.state.products);
+    this.getData();
   }
 
   getData() {
-    let url = '/test';
+    let url = 'localhost:8080/api/products';
     fetch(url)
       .then((results) => results.json())
       .then((results) => this.setState({ products: results }));
@@ -27,7 +23,6 @@ class App extends Component {
   render() {
     return (
       <main className="app">
-        
           <Router>
           <header>
             <nav className="selected">
