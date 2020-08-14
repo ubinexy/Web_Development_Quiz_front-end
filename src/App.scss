@@ -1,0 +1,7 @@
+@import 'styles/variables.scss';
+
+.app {
+  width: 600px;
+  margin: 80px auto $base-margin auto;
+  background-color: $white;
+}
