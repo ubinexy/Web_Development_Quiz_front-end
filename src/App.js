@@ -4,11 +4,32 @@ import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
 import Products from './Products';
 
 class App extends Component {
+  state = {
+    products: [{ id: 1, name: '可乐1', price: '1元', unit: '瓶' }],
+  };
+
+  componentDidMount() {
+    // this.getData();
+    // this.setState({
+    //   products: ,
+    // });
+
+    console.log('~~~~~~~~~~~~~~~~~~', this.state.products);
+  }
+
+  getData() {
+    let url = '/test';
+    fetch(url)
+      .then((results) => results.json())
+      .then((results) => this.setState({ products: results }));
+  }
+
   render() {
     return (
       <main className="app">
-        <header>
+        
           <Router>
+          <header>
             <nav className="selected">
               <Link to="/shop">商城</Link>
             </nav>
@@ -18,9 +39,13 @@ class App extends Component {
             <nav>
               <Link to="/shop">+ 添加商品</Link>
             </nav>
-            <Route path="/shop" component={Products}></Route>
+          </header>
+            <Route
+              path="/shop"
+              render={() => <Products products={this.state.products} />}
+            ></Route>
           </Router>
-        </header>
+
       </main>
     );
   }
